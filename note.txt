@@ -1,0 +1,30 @@
+CiviSign/
+├── blockchain-node/      # Go code
+│   ├── main.go
+│   ├── block.go
+│   └── blockchain.go
+├── blockchain-gateway/   # Django app
+│   ├── civisign_gateway/
+│   └── api/
+├── web-backend/          # Node.js app
+│   ├── src/
+│   └── routes/
+├── web-frontend/         # React app
+│   └── src/
+└── docs/                 # Diagrams, reports, architecture notes
+
+
+** Blockchain in CiviSign **
+
+* middle server (or “bootstrap node)
+* permissioned blockchain (sometimes called a private blockchain)!
+
+
+Model of Block chain 
+
+Bloack chain created they way as 
+[bootstrap node] list all node -> select one node from it (the head of the node) -> bootstrap node connect to it 
+-> bootstrap node select another node and ask the connected node to connect to that node , next select another node and tell the last node to connect the given node
+
+[web] (doc)-> [web server] (hash of doc)-> [bootstrap node](hash)-> [Node] -> ... -> [Last node] (store the hash in every node)
+[web] (hash)-> [web server] (hash) -> [bootstrap node](hash) -> verify by every node 
